@@ -486,6 +486,22 @@ export default function App() {
               },
               {
                 id: '03',
+                title: 'TRINETRA: Severe Weather Nowcasting',
+                subtitle: 'Spatiotemporal Deep Learning Nowcasting System',
+                description: 'TRINETRA is an AI-powered severe weather nowcasting system that uses real-time weather data, satellite/NWP observations, terrain information, and a Conv3D spatiotemporal deep-learning model to predict threats such as thunderstorms, cloudbursts, and flash floods 2–6 hours in advance.',
+                details: 'It provides location-based risk levels, explanations of the major risk drivers, and map-based alerts to support faster disaster preparedness and response.',
+                tech: ['Next.js', 'FastAPI', 'PyTorch', 'Conv3D', 'Supabase', 'PostGIS', 'MapLibre', 'Leaflet', 'Vercel'],
+                capabilities: [
+                  'Conv3D spatiotemporal deep-learning prediction model',
+                  '2–6 hour lead-time forecasts for thunderstorms & flash floods',
+                  'Location-based risk levels & major risk driver explanations',
+                  'Map-based interactive spatial alerts with MapLibre & Leaflet'
+                ],
+                github: 'https://github.com/Praticksingh/TRINETRA',
+                live: 'https://trinetra-web-nu.vercel.app/'
+              },
+              {
+                id: '04',
                 title: 'Anamnesis AI',
                 subtitle: 'Multi-Agent Decision-Intelligence Platform',
                 description: 'Built a multi-agent application that simulates alternate histories and future scenarios across economy, society, governance, sustainability, and technology.',
@@ -501,7 +517,7 @@ export default function App() {
                 live: 'https://anamnesis-8hztziosu-praticksinghs-projects.vercel.app/'
               },
               {
-                id: '04',
+                id: '05',
                 title: 'Cyber Fraud Detection Platform',
                 subtitle: 'Full-Stack ML System',
                 description: 'Built an end-to-end machine-learning platform for phone-number and behavioral risk analysis.',
@@ -542,7 +558,7 @@ export default function App() {
                             {project.subtitle}
                           </span>
                         </div>
-                        <h3 className="font-serif" style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.4rem)', fontWeight: 700 }}>
+                        <h3 className="font-serif" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.35rem)', fontWeight: 700, maxWidth: '820px', lineHeight: 1.25, wordBreak: 'break-word' }}>
                           {project.title}
                         </h3>
                       </div>
