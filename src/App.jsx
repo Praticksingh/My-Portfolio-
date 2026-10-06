@@ -465,7 +465,7 @@ export default function App() {
                   'Shared types with environment-based configuration'
                 ],
                 github: 'https://github.com/Praticksingh',
-                live: null
+                live: 'https://autoheal-ai-main-b5lsqdqsh-praticksinghs-projects.vercel.app/'
               },
               {
                 id: '02',
@@ -482,7 +482,7 @@ export default function App() {
                   'Staff allocation workflows & audit reporting'
                 ],
                 github: 'https://github.com/Praticksingh/SmartMedAI',
-                live: null
+                live: 'https://smart-med-ai-beryl.vercel.app/'
               },
               {
                 id: '03',
@@ -498,7 +498,7 @@ export default function App() {
                   'Risk & feasibility evaluation with structured impact reports'
                 ],
                 github: 'https://github.com/Praticksingh/Anamnesis-AI',
-                live: 'https://github.com/Praticksingh/Anamnesis-AI'
+                live: null
               },
               {
                 id: '04',
@@ -514,7 +514,7 @@ export default function App() {
                   'Cloud production deployment on Render & Vercel'
                 ],
                 github: 'https://github.com/Praticksingh',
-                live: 'https://github.com/Praticksingh'
+                live: null
               },
               {
                 id: '05',
@@ -570,6 +570,7 @@ export default function App() {
                               href={project.github}
                               target="_blank"
                               rel="noopener noreferrer"
+                              aria-label={`View ${project.title} source code on GitHub`}
                               className="interactive-hover"
                               style={{
                                 display: 'inline-flex',
@@ -586,7 +587,7 @@ export default function App() {
                                 textTransform: 'uppercase',
                                 fontFamily: 'var(--font-display)',
                                 textDecoration: 'none',
-                                transition: 'all 0.2s ease'
+                                transition: 'all 0.25s ease'
                               }}
                               onMouseEnter={(e) => {
                                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.22)';
@@ -609,12 +610,13 @@ export default function App() {
                               href={project.live}
                               target="_blank"
                               rel="noopener noreferrer"
+                              aria-label={`View live demo of ${project.title}`}
                               className="interactive-hover"
                               style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                padding: '0.6rem 1.15rem',
+                                gap: '0.45rem',
+                                padding: '0.6rem 1.25rem',
                                 borderRadius: '9999px',
                                 backgroundColor: '#ffffff',
                                 color: '#0b0a0a',
@@ -624,17 +626,29 @@ export default function App() {
                                 textTransform: 'uppercase',
                                 fontFamily: 'var(--font-display)',
                                 textDecoration: 'none',
-                                transition: 'all 0.2s ease'
+                                transition: 'all 0.25s ease',
+                                boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)'
                               }}
                               onMouseEnter={(e) => {
                                 e.currentTarget.style.backgroundColor = '#f4d38c';
+                                const arrow = e.currentTarget.querySelector('.demo-arrow');
+                                if (arrow) arrow.style.transform = 'translate(1.5px, -1.5px)';
                               }}
                               onMouseLeave={(e) => {
                                 e.currentTarget.style.backgroundColor = '#ffffff';
+                                const arrow = e.currentTarget.querySelector('.demo-arrow');
+                                if (arrow) arrow.style.transform = 'translate(0, 0)';
                               }}
                             >
                               <span>Live Demo</span>
-                              <ArrowUpRight size={14} />
+                              <ArrowUpRight
+                                size={14}
+                                className="demo-arrow"
+                                style={{
+                                  transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                                  display: 'inline-block'
+                                }}
+                              />
                             </a>
                           </MagneticButton>
                         )}
