@@ -486,7 +486,7 @@ export default function App() {
               },
               {
                 id: '03',
-                title: 'Anamnesis-AI',
+                title: 'Anamnesis AI',
                 subtitle: 'Multi-Agent Decision-Intelligence Platform',
                 description: 'Built a multi-agent application that simulates alternate histories and future scenarios across economy, society, governance, sustainability, and technology.',
                 details: 'Designed orchestrator, domain and critic agents with LangGraph, grounding reasoning in real-world datasets through retrieval. Evaluates risk and feasibility while producing structured impact reports.',
@@ -498,7 +498,7 @@ export default function App() {
                   'Risk & feasibility evaluation with structured impact reports'
                 ],
                 github: 'https://github.com/Praticksingh/Anamnesis-AI',
-                live: null
+                live: 'https://anamnesis-8hztziosu-praticksinghs-projects.vercel.app/'
               },
               {
                 id: '04',
@@ -514,22 +514,7 @@ export default function App() {
                   'Cloud production deployment on Render & Vercel'
                 ],
                 github: 'https://github.com/Praticksingh',
-                live: null
-              },
-              {
-                id: '05',
-                title: 'Pack&Chew Website',
-                subtitle: 'Transit Booking & Food Services Platform',
-                description: 'Bus and train ticket booking platform with integrated food services and live tracking.',
-                details: 'Designed unified booking and ordering interfaces to allow travelers to coordinate intercity journeys with onboard meal delivery and real-time status monitoring.',
-                tech: ['Full-Stack Web', 'React', 'Node.js', 'Live Tracking', 'REST APIs'],
-                capabilities: [
-                  'Integrated bus & train ticket reservation system',
-                  'Transit food ordering & dining coordination',
-                  'Real-time live journey tracking'
-                ],
-                github: 'https://github.com/Praticksingh',
-                live: null
+                live: 'https://cyber-fraud-detection-platform.vercel.app/login'
               }
             ].map((project, idx) => (
               <ScrollReveal key={project.id} delay={Math.min(idx * 40, 100)} distance={20}>
