@@ -1,0 +1,363 @@
+/* ==========================================================================
+   PRATIK SINGH // FULL-STACK & AI/ML DEVELOPER DESIGN SYSTEM
+   Theme: Haute Vermilion / Obsidian / Titanium
+   ========================================================================== */
+
+:root {
+  /* Exact detected video background color: #EB1008 / #EA1008 */
+  --bg-vermilion: #eb1008;
+  --bg-vermilion-dark: #b80903;
+  --bg-obsidian: #0b0a0a;
+  --bg-card: rgba(255, 255, 255, 0.07);
+  --bg-card-hover: rgba(255, 255, 255, 0.12);
+  --border-glass: rgba(255, 255, 255, 0.15);
+  --border-glass-light: rgba(255, 255, 255, 0.28);
+  
+  --text-pure: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.76);
+  --text-dim: rgba(255, 255, 255, 0.48);
+  --text-gold: #f4d38c;
+  
+  --accent-gold: #e8bf68;
+  --accent-red-glow: rgba(235, 16, 8, 0.6);
+
+  --font-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-vermilion);
+  color: var(--text-pure);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-vermilion);
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-vermilion);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 9999px;
+  transition: all 0.3s var(--ease-luxury);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--border-glass-light);
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Button & Interactive styles */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0b0a0a;
+  background: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.35s var(--ease-luxury);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  background: #f4d38c;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.35s var(--ease-luxury);
+  text-decoration: none;
+}
+
+.btn-luxury-outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Pulse animation */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+/* Radar ping */
+@keyframes ping-subtle {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ping-dot {
+  position: relative;
+  display: inline-flex;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.ping-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #10b981;
+  animation: ping-subtle 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Subtle background noise texture */
+.bg-noise {
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ==========================================================================
+   CINEMATIC HERO ENTRANCE SEQUENCE
+   Crisp, athletic timing with cubic-bezier(0.16, 1, 0.3, 1)
+   ========================================================================== */
+@keyframes heroNavEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -16px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.anim-nav-entrance {
+  animation: heroNavEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.anim-hero-canvas {
+  animation: heroFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
+}
+
+@keyframes heroSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.anim-hero-hi {
+  animation: heroSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+@keyframes heroNameReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.anim-hero-name-first {
+  display: inline-block;
+  animation: heroNameReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+.anim-hero-name-last {
+  display: inline-block;
+  animation: heroNameReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.34s both;
+}
+
+.anim-hero-title {
+  animation: heroSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.46s both;
+}
+
+.anim-hero-desc {
+  animation: heroSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.56s both;
+}
+
+.anim-hero-buttons {
+  animation: heroSlideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.68s both;
+}
+
+.anim-hero-controls {
+  animation: heroFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.78s both;
+}
+
+/* ==========================================================================
+   MICRO-INTERACTIONS & CARDS
+   ========================================================================== */
+.skill-pill {
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: default;
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(235, 16, 8, 0.25);
+  color: #ffffff !important;
+}
+
+.nav-link-active {
+  background-color: rgba(255, 255, 255, 0.22) !important;
+  color: #f4d38c !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Fluid / Liquid Transition Section Curves */
+.liquid-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  display: block;
+}
+
+.liquid-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 52px;
+}
+
+/* ==========================================================================
+   REDUCED MOTION OVERRIDES
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .anim-nav-entrance,
+  .anim-hero-canvas,
+  .anim-hero-hi,
+  .anim-hero-name-first,
+  .anim-hero-name-last,
+  .anim-hero-title,
+  .anim-hero-desc,
+  .anim-hero-buttons,
+  .anim-hero-controls {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
